@@ -191,8 +191,9 @@ public class NokiaStoreHelper implements AppstoreInAppBillingService {
 			mRequestCode = requestCode;
 			mPurchaseListener = listener;
 
-			act.startIntentSenderForResult(
-				pendingIntent.getIntentSender(), requestCode, new Intent(), 0, 0, 0
+            final IntentSender intentSender = pendingIntent.getIntentSender();
+            act.startIntentSenderForResult(
+                    intentSender, requestCode, new Intent(), 0, 0, 0
 			);
 
 		} catch (RemoteException e) {
