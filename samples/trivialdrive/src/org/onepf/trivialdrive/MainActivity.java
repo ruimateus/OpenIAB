@@ -188,10 +188,7 @@ public class MainActivity extends Activity {
         storeKeys.put("com.yandex.store", YANDEX_PUBLIC_KEY);
         storeKeys.put("Appland", APPLAND_PUBLIC_KEY);
 
-        OpenIabHelper.Options options = new OpenIabHelper.Options();
-        options.supportFortumo = true;
-        mHelper = new OpenIabHelper(this, options);
-        mHelper.enableDebugLogging(true);
+        mHelper = new OpenIabHelper(this, storeKeys);
         
         // enable debug logging (for a production application, you should set this to false).
         //mHelper.enableDebugLogging(true);
