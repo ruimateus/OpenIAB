@@ -66,6 +66,12 @@ https://github.com/onepf/OpenIAB/blob/master/samples/trivialdrive/src/org/onepf/
     <uses-permission android:name="android.permission.SEND_SMS" />
     ```
 
+    Be careful using sms permissions. If you want to support devices without sms functionality, don't forget to add
+
+      ```xml
+      <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+      ```
+
 9. Edit your proguard config file
 
     ```
@@ -313,7 +319,12 @@ OpenIAB setup
         <activity android:name="mp.MpActivity"
                   android:theme="@android:style/Theme.Translucent.NoTitleBar"
                   android:configChanges="orientation|keyboardHidden|screenSize"/>
-     ```
+       ```
+    if you want to support devices without sms functionality, add
+
+      ```xml
+      <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+      ```
 3. In the code setup an Options object
 
     ```java
