@@ -314,6 +314,36 @@ SlideME
     # install for SlideME:
     adb install -i com.slideme.sam.manager /path/to/YourApp.apk
     ```
+    
+Aptoide
+-------------
+
+1. Make sure you are registered as Certified Publisher and your application is Certified
+  * Go to http://www.aptoide.com/page/publishers and enroll as Certified Publisher.
+  * Certify your application in My Apps Section.
+  * After app certification you will have access to your base64 Public Key.
+
+1. Add the corresponding billing permissions
+
+    ```xml
+    <uses-permission android:name="org.onepf.openiab.permission.BILLING" />
+    ```
+
+1. Provide your public keys
+
+    ```java
+    OpenIabHelper.Options.Builder builder = new OpenIabHelper.Options.Builder();
+    builder.addStoreKey(OpenIabHelper.NAME_APTOIDE, aptoideBase64EncodedPublicKey);
+    mHelper = new OpenIabHelper(this, builder.build());
+    ```
+    
+1. Map the SKUs
+
+    ```java
+    OpenIabHelper.mapSku(SKU_PREMIUM, OpenIabHelper.NAME_APTOIDE, "org.onepf.trivialdrive.storename.premium");
+    OpenIabHelper.mapSku(SKU_GAS, OpenIabHelper.NAME_APTOIDE, "org.onepf.trivialdrive.storename.gas");
+    OpenIabHelper.mapSku(SKU_INFINITE_GAS, OpenIabHelper.NAME_APTOIDE, "org.onepf.trivialdrive.storename.infinite_gas");
+    ```
 
 Fortumo: carrier billing and NOOK
 =================================
