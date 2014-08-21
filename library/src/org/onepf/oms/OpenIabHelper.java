@@ -142,6 +142,7 @@ public class OpenIabHelper {
     public static final int BILLING_RESPONSE_RESULT_BILLING_UNAVAILABLE = 3;
     public static final int BILLING_RESPONSE_RESULT_ERROR = 6;
 
+    
     public static final String NAME_GOOGLE = "com.google.play";
     public static final String NAME_AMAZON = "com.amazon.apps";
     public static final String NAME_SAMSUNG = "com.samsung.apps";
@@ -150,6 +151,7 @@ public class OpenIabHelper {
     public static final String NAME_NOKIA = "com.nokia.nstore";
     public static final String NAME_APPLAND = "Appland";
     public static final String NAME_SLIDEME = "SlideME";
+    public static final String NAME_APTOIDE = "cm.aptoide.pt";
 
     /**
      * @param sku       - application inner SKU
